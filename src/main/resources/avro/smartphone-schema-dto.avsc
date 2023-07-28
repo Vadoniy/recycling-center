@@ -1,0 +1,130 @@
+{
+  "namespace": "avro.schema",
+  "type": "record",
+  "name": "SmartPhoneAvro",
+  "fields": [
+    {
+      "name": "manufacturer",
+      "type": {
+        "namespace": "avro.schema.enums",
+        "name": "ManufacturerAvro",
+        "type": "enum",
+        "symbols": [
+          "APPLE",
+          "SAMSUNG",
+          "XIAOMI"
+        ]
+      }
+    },
+    {
+      "name": "battery",
+      "type": {
+        "namespace": "avro.schema.detail",
+        "type": "record",
+        "name": "BatteryAvro",
+        "fields": [
+          {
+            "name": "broken",
+            "type": "boolean"
+          },
+          {
+            "name": "manufacturer",
+            "type": "avro.schema.enums.ManufacturerAvro"
+          },
+          {
+            "name": "model",
+            "type": {
+              "type": "string",
+              "logicalType": "avro.schema.enums.Model"
+            }
+          },
+          {
+            "name": "ssn",
+            "type": {
+              "type": "string",
+              "logicalType": "UUID"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "model",
+      "type": {
+        "type": "string",
+        "logicalType": "avro.schema.enums.Model"
+      }
+    },
+    {
+      "name": "motherBoard",
+      "type": {
+        "type": "record",
+        "name": "MotherBoardAvro",
+        "namespace": "avro.schema.detail",
+        "fields": [
+          {
+            "name": "broken",
+            "type": "boolean"
+          },
+          {
+            "name": "manufacturer",
+            "type": "avro.schema.enums.ManufacturerAvro"
+          },
+          {
+            "name": "model",
+            "type": {
+              "type": "string",
+              "logicalType": "avro.schema.enums.Model"
+            }
+          },
+          {
+            "name": "ssn",
+            "type": {
+              "type": "string",
+              "logicalType": "UUID"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "screen",
+      "type": {
+        "type": "record",
+        "name": "ScreenAvro",
+        "namespace": "avro.schema.detail",
+        "fields": [
+          {
+            "name": "broken",
+            "type": "boolean"
+          },
+          {
+            "name": "manufacturer",
+            "type": "avro.schema.enums.ManufacturerAvro"
+          },
+          {
+            "name": "model",
+            "type": {
+              "type": "string",
+              "logicalType": "avro.schema.enums.Model"
+            }
+          },
+          {
+            "name": "ssn",
+            "type": {
+              "type": "string",
+              "logicalType": "UUID"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "ssn",
+      "type": {
+        "type": "string",
+        "logicalType": "UUID"
+      }
+    }
+  ]
+}
